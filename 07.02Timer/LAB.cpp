@@ -151,87 +151,87 @@ default:
 
 //3
 
-	switch (uMsg)
-	{
-	case WM_KEYDOWN:
-		
-	
-		if (wParam == VK_RETURN) {
+	//switch (uMsg)
+	//{
+	//case WM_KEYDOWN:
+	//	
+	//
+	//	if (wParam == VK_RETURN) {
 
-			SetTimer(hwnd, 1, 1000, NULL);
-			RECT rect;
-			GetWindowRect(hwnd, &rect);
-			MoveWindow(hwnd, 0, 0, 300, 300, true);
-		}
-		else if (wParam == VK_ESCAPE)
-		{
-			KillTimer(hwnd, 1);
-		}
-
-
-		else if (wParam == VK_LEFT) {
-			RECT rect;
-			GetWindowRect(hwnd, &rect);
-			int width = rect.right - rect.left;
-			int height = rect.bottom - rect.top;
-			MoveWindow(hwnd, rect.left - 10, rect.top, width, height, true);
-		}
+	//		SetTimer(hwnd, 1, 1000, NULL);
+	//		RECT rect;
+	//		GetWindowRect(hwnd, &rect);
+	//		MoveWindow(hwnd, 0, 0, 300, 300, true);
+	//	}
+	//	else if (wParam == VK_ESCAPE)
+	//	{
+	//		KillTimer(hwnd, 1);
+	//	}
 
 
-		else if (wParam == VK_RIGHT) {
-			RECT rect;
-			GetWindowRect(hwnd, &rect);
-			int width = rect.right - rect.left;
-			int height = rect.bottom - rect.top;
-			MoveWindow(hwnd, rect.left + 10, rect.top, width, height, true);
-		}
-
-		else if (wParam == VK_UP) {
-			RECT rect;
-			GetWindowRect(hwnd, &rect);
-			int width = rect.right - rect.left;
-			int height = rect.bottom - rect.top;
-			MoveWindow(hwnd, rect.left, rect.top - 20, width, height, true);
-		}
-		else if (wParam == VK_DOWN) {
-			RECT rect;
-			GetWindowRect(hwnd, &rect);
-			int width = rect.right - rect.left;
-			int height = rect.bottom - rect.top;
-			MoveWindow(hwnd, rect.left, rect.top + 20, width, height, true);
-		}
-		break;
-
-	
-
-	
-	
-	
-	case WM_TIMER:
-	{
-		RECT rect;
-		GetWindowRect(hwnd, &rect); //экранные координаты
+	//	else if (wParam == VK_LEFT) {
+	//		RECT rect;
+	//		GetWindowRect(hwnd, &rect);
+	//		int width = rect.right - rect.left;
+	//		int height = rect.bottom - rect.top;
+	//		MoveWindow(hwnd, rect.left - 10, rect.top, width, height, true);
+	//	}
 
 
-		int width = rect.right - rect.left;
-		int height = rect.bottom - rect.top;
+	//	else if (wParam == VK_RIGHT) {
+	//		RECT rect;
+	//		GetWindowRect(hwnd, &rect);
+	//		int width = rect.right - rect.left;
+	//		int height = rect.bottom - rect.top;
+	//		MoveWindow(hwnd, rect.left + 10, rect.top, width, height, true);
+	//	}
 
-		MoveWindow(hwnd, rect.left - 10, rect.top, width, height, true);
-	}
-	break;
+	//	else if (wParam == VK_UP) {
+	//		RECT rect;
+	//		GetWindowRect(hwnd, &rect);
+	//		int width = rect.right - rect.left;
+	//		int height = rect.bottom - rect.top;
+	//		MoveWindow(hwnd, rect.left, rect.top - 20, width, height, true);
+	//	}
+	//	else if (wParam == VK_DOWN) {
+	//		RECT rect;
+	//		GetWindowRect(hwnd, &rect);
+	//		int width = rect.right - rect.left;
+	//		int height = rect.bottom - rect.top;
+	//		MoveWindow(hwnd, rect.left, rect.top + 20, width, height, true);
+	//	}
+	//	break;
+
+	//
+
+	//
+	//
+	//
+	//case WM_TIMER:
+	//{
+	//	RECT rect;
+	//	GetWindowRect(hwnd, &rect); //экранные координаты
+
+
+	//	int width = rect.right - rect.left;
+	//	int height = rect.bottom - rect.top;
+
+	//	MoveWindow(hwnd, rect.left - 10, rect.top, width, height, true);
+	//}
+	//break;
 
 
 
-	case WM_DESTROY:
-		PostQuitMessage(0); //WM_QUIT
-		break;
-	
-	default:
-		return DefWindowProc(hwnd, uMsg, wParam, lParam);
-	}
+	//case WM_DESTROY:
+	//	PostQuitMessage(0); //WM_QUIT
+	//	break;
+	//
+	//default:
+	//	return DefWindowProc(hwnd, uMsg, wParam, lParam);
+	//}
 
-	
-	
+	//
+	//
 	
 return 0;
 }
